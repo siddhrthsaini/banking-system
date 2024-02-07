@@ -20,7 +20,7 @@ public class UserController {
         try{
             //fv
             //bv
-            user = userHelper.createUser(test,user);
+            user = userHelper.createUser(test, user);
             commonResponse.setResponseObject(user);
 
         }catch (Exception e) {

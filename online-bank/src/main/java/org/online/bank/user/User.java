@@ -8,15 +8,17 @@ import org.slf4j.LoggerFactory;
 public class User extends BankObject {
     public static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    String name ;
-    String useName ;
-    String password ;
+    String createdBy;
+    String createdOn;
+    String modifiedBy;
+    String modifiedOn;
+    String name;
+    String userName;
+    String password;
 
-    long mobileNumber;
+    String mobileNumber;
 
     String emailId;
-
-    String createdBy;
 
     public String getName() {
         return name;
@@ -27,11 +29,11 @@ public class User extends BankObject {
     }
 
     public String getUseName() {
-        return useName;
+        return userName;
     }
 
     public void setUseName(String useName) {
-        this.useName = useName;
+        this.userName = useName;
     }
 
     public String getPassword() {
@@ -42,11 +44,11 @@ public class User extends BankObject {
         this.password = password;
     }
 
-    public long getMobileNumber() {
+    public String getMobileNumber() {
         return mobileNumber;
     }
 
-    public void setMobileNumber(long mobileNumber) {
+    public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 
@@ -90,10 +92,34 @@ public class User extends BankObject {
         this.modifiedOn = modifiedOn;
     }
 
-    String createdOn;
-    String modifiedBy;
+    public User(String createdBy, String createdOn, String modifiedBy, String modifiedOn, String name, String userName, String password, String mobileNumber, String emailId) {
+        this.createdBy = createdBy;
+        this.createdOn = createdOn;
+        this.modifiedBy = modifiedBy;
+        this.modifiedOn = modifiedOn;
+        this.name = name;
+        this.userName = userName;
+        this.password = password;
+        this.mobileNumber = mobileNumber;
+        this.emailId = emailId;
+    }
 
-    String modifiedOn;
-
-
+    public User() {
+        super();
+    }
+    @Override
+    public String toString() {
+        return "User{" +
+                "createdBy='" + createdBy + '\'' +
+                ", createdOn='" + createdOn + '\'' +
+                ", modifiedBy='" + modifiedBy + '\'' +
+                ", modifiedOn='" + modifiedOn + '\'' +
+                ", name='" + name + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", mobileNumber='" + mobileNumber + '\'' +
+                ", emailId='" + emailId + '\'' +
+                ", id='" + id + '\'' +
+                '}';
+    }
 }
